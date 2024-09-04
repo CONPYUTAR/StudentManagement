@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Application {
 
+
 	@Autowired
 	private StudentRepository repository;
 
