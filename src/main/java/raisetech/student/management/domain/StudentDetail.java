@@ -4,7 +4,7 @@ import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 import raisetech.student.management.data.Student;
-import raisetech.student.management.service.StudentsCourses;
+import raisetech.student.management.data.StudentsCourses;
 
 @Getter
 @Setter

@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Students {
+public class Student {
 
   private String studentId;
   private String fulName;
@@ -17,4 +17,6 @@ public class Students {
   private String gender;
   private String remark;
   private boolean isDeleted;
-}
+
+  }
+
