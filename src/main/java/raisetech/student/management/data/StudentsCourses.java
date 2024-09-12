@@ -1,7 +1,11 @@
 package raisetech.student.management.data;
 
+import lombok.Getter;
+import lombok.Setter;
 
-public class StudentCourses {
+@Getter
+@Setter
+public class StudentsCourses {
 
   private int id;
   private int studentId;
