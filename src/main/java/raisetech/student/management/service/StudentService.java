@@ -9,13 +9,14 @@ import raisetech.student.management.data.Student;
 
 @Service
 public class StudentService {
-
   private StudentRepository repository;
 
   @Autowired
   public StudentService(StudentRepository repository) {
     this.repository = repository;
   }
+
+
 
   public List<Student> searchStudentList() {
    //ここで何かしらの処理を行う。
@@ -25,4 +26,10 @@ public class StudentService {
  public List<StudentsCourses> searchStudentsCourseList() {
    return repository.searchStudentsCourses();
  }
- }
+  }
+
+
+
+
+
+

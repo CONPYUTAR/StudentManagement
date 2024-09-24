@@ -9,6 +9,7 @@ import raisetech.student.management.controller.convertar.StudentConverter;
 import raisetech.student.management.data.StudentsCourses;
 import raisetech.student.management.data.Student;
 import raisetech.student.management.service.StudentService;
+import raisetech.student.management.domain.StudentDetail;
 
 @Controller
 public class StudentController {
@@ -27,7 +28,9 @@ public class StudentController {
     List<Student> students = service.searchStudentList();
     List<StudentsCourses> studentCourses = service.searchStudentsCourseList();
 
-    model.addAttribute("studentList",converter.convertStudentDetails(students, studentCourses));
+    List<StudentDetail> studentDetails = converter.convertStudentDetails(students, studentCourses);
+
+    model.addAttribute("studentList", studentDetails);
     return "studentList";
   }
 
