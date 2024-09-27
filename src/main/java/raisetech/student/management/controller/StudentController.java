@@ -4,7 +4,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import raisetech.student.management.controller.convertar.StudentConverter;
 import raisetech.student.management.data.StudentsCourses;
 import raisetech.student.management.data.Student;
@@ -28,9 +31,7 @@ public class StudentController {
     List<Student> students = service.searchStudentList();
     List<StudentsCourses> studentCourses = service.searchStudentsCourseList();
 
-    List<StudentDetail> studentDetails = converter.convertStudentDetails(students, studentCourses);
-
-    model.addAttribute("studentList", studentDetails);
+    model.addAttribute("studentList",converter.convertStudentDetails(students, studentCourses) );
     return "studentList";
   }
 
@@ -38,4 +39,11 @@ public class StudentController {
   public List<StudentsCourses> getStudentsCourseList() {
     return service.searchStudentsCourseList();
   }
+
+  @GetMapping("/newStudent")
+  public String newStudent(Model model) {
+    model.addAttribute("studentDetail", new StudentDetail());
+    return "registerStudent";
+  }
+
 }
